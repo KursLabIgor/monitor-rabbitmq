@@ -14,16 +14,16 @@ else:
     URL = os.environ['RABBITMQ_URL']
 
 if 'RABBIT_MQ_USERNAME' not in os.environ:
-    USERNAME = 'guest'
-    log.info("Using default USERNAME %s", USERNAME)
+    #USERNAME = 'guest'
+    log.error("RABBIT_MQ_USERNAME var not found")
 else:
-    USERNAME = os.environ['RABBITMQ_USERNAME']
+    USERNAME = os.environ['RABBIT_MQ_USERNAME']
 
 if 'RABBIT_MQ_PASSWORD' not in os.environ:
-    PASSWORD = 'guest'
-    log.info("Using default PASSWORD")
+    #PASSWORD = 'guest'
+    log.error("RABBIT_MQ_PASSWORD var not found")
 else:
-    PASSWORD = os.environ['PASSWORD']
+    PASSWORD = os.environ['RABBIT_MQ_PASSWORD']
 
 requestURL = urljoin(URL, '/api/queues')
 
